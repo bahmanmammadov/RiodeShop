@@ -1,0 +1,65 @@
+﻿@model List<BlogPost>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<nav class="breadcrumb-nav">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="demo1.html"><i class="d-icon-home"></i></a></li>
+            <li><a href="#" class="active">Blog</a></li>
+            <li>Mask Grid</li>
+        </ul>
+    </div>
+</nav>
+<ul class="nav-filters filter-underline blog-filters justify-content-center" data-target=".posts">
+    <li><a href="#" class="nav-filter active" data-filter="*">All</a><span>15</span></li>
+    <li><a href="#" class="nav-filter" data-filter=".fashion">Fashion</a><span>10</span></li>
+    <li><a href="#" class="nav-filter" data-filter=".lifestyle">Lifestyle</a><span>10</span></li>
+    <li><a href="#" class="nav-filter" data-filter=".shopping">Shopping</a><span>2</span></li>
+    <li><a href="#" class="nav-filter" data-filter=".sport">Sport</a><span>4</span></li>
+    <li><a href="#" class="nav-filter" data-filter=".summer-sale">Summer Sale</a><span>1</span></li>
+    <li><a href="#" class="nav-filter" data-filter=".travel">Travel</a><span>4</span></li>
+    <li><a href="#" class="nav-filter" data-filter=".winter-sale">Winter Sale</a><span>1</span></li>
+</ul>
+<div class="posts grid post-grid row" data-grid-options="{
+                        'layoutMode': 'fitRows'
+                    }">
+    @foreach (var item in Model)
+    {
+
+        <div class="grid-item col-sm-6 col-lg-4 lifestyle shopping winter-sale">
+            <article class="post post-mask gradient">
+                <figure class="post-media overlay-zoom">
+                    <a asp-action="index" asp-route-id="@item.ID">
+                        <img  src="~/uploads/images/blog/@item.ImagePath" width="380" height="280" alt="post" />
+                    </a>
+                </figure>
+                <div class="post-details">
+                    <div class="post-meta">
+                        on <a asp-route-id="@item.ID" class="post-date">@item.PublishDate?.ToString("MM d,yyyy")</a>
+                        | <a href="#" class="post-comment"><span>2</span> Comments</a>
+                    </div>
+                    <h4 class="post-title">
+                        <a asp-action="Details" asp-route-id="@item.ID">
+                            @item.Title
+
+                        </a>
+                    </h4>
+                    <a href="post-single.html" class="btn btn-link btn-underline btn-white">
+                        Read more<i class="d-icon-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    }
+</div>
+@section addjs{
+    <script>
+
+        function openDetails() {
+            window.location.href = `@Url.Action("Details")`
+        }
+
+    </script>
+}

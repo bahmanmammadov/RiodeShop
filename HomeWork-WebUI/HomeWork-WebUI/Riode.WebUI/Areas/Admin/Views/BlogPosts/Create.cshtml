@@ -1,0 +1,75 @@
+﻿@model BlogPost
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Brand</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group col-12">
+                <label class="control-label">
+                    Şəkil
+                </label>
+                <label class="image-input"
+                       for="file">
+                    <input type="hidden" name="fileTemp" value="">
+                    <span>×</span>
+                </label>
+                <input name="file"
+                       id="file"
+                       type="file"
+                       accept="image/x-png,image/gif,image/jpeg">
+            </div>
+
+
+
+
+
+
+            <div class="form-group" style="width:450px">
+                <label asp-for="Body" class="control-label"></label>
+                <input asp-for="Body" class="form-control" />
+                <span asp-validation-for="Body" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section addjs{
+    <script src="~/libs/ckeditor5/ckeditor.js"></script>
+    <script src="~/libs/image-letter-input/image-letter.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            ClassicEditor
+                .create(document.querySelector('#Body'))
+                .catch(error => {
+                    console.error(error);
+                });
+        })
+    </script>
+}
+@section addcss {
+    <link href="~/libs/image-letter-input/StyleSheet.css" rel="stylesheet" />
+}
+

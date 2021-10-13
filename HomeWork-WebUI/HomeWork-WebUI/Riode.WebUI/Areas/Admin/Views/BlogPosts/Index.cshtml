@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BlogPost>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+
+<table class="table table-dark " style="width:1000px">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">CreateDate</th>
+            <th scope="col">Delete by User</th>
+            <th scope="col" class="btn btn-success" style="height:45px; margin-top:5px; margin-left:10px;color:white; width:250px" float="right"><a style="color: white;" asp-action="Create">Create New</a></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">
+                <img  src="~/uploads/images/blog/@item.ImagePath" width="30px" height="30px"/>
+            </th>
+            <th scope="row">@item.Name</th>
+            <td>@item.CreatedTime</td>
+            <td>@item.DeleteByUserId</td>
+            <td>
+                <a class="btn btn-primary" style="width:70px" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+
+        </tr>
+
+        }
+
+    </tbody>
+</table>

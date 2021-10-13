@@ -1,0 +1,253 @@
+﻿@model IEnumerable<Riodetask.Model.Entity.Contact>
+@*@model Contact*@
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container-fluid no-gutters">
+    <div class="row">
+        <div class="col-lg-12 p-0 ">
+            <div class="header_iner d-flex justify-content-between align-items-center">
+                <div class="sidebar_icon d-lg-none">
+                    <i class="ti-menu"></i>
+                </div>
+                <div class="line_icon open_miniSide d-none d-lg-block">
+                    <img src="~/uploads/images/img/line_img.png" alt="">
+                </div>
+                <div class="header_right d-flex justify-content-between align-items-center">
+                    <div class="header_notification_warp d-flex align-items-center">
+                        <li>
+                            <a class="CHATBOX_open nav-link-notify" href="#"> <img src="~/uploads/images/img/icon/msg.svg" alt="">   </a>
+                        </li>
+                        <li>
+                            <a class="bell_notification_clicker nav-link-notify" href="#">
+                                <img src="~/uploads/images/img/icon/bell.svg" alt="">
+                                <!-- <span>2</span> -->
+                            </a>
+                            <!-- Menu_NOtification_Wrap  -->
+                            <div class="Menu_NOtification_Wrap">
+                                <div class="notification_Header">
+                                    <h4>Notifications</h4>
+                                </div>
+                                <div class="Notification_body">
+                                    <!-- single_notify  -->
+                                    <div class="single_notify d-flex align-items-center">
+                                        <div class="notify_thumb">
+                                            <a href="#"><img src="~/uploads/images/img/staf/2.png" alt=""></a>
+                                        </div>
+                                        <div class="notify_content">
+                                            <a href="#"><h5>Cool Marketing </h5></a>
+                                            <p>Lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+                                    <!-- single_notify  -->
+                                    <div class="single_notify d-flex align-items-center">
+                                        <div class="notify_thumb">
+                                            <a href="#"><img src="~/uploads/images/img/staf/4.png" alt=""></a>
+                                        </div>
+                                        <div class="notify_content">
+                                            <a href="#"><h5>Awesome packages</h5></a>
+                                            <p>Lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+                                    <!-- single_notify  -->
+                                    <div class="single_notify d-flex align-items-center">
+                                        <div class="notify_thumb">
+                                            <a href="#"><img src="~/uploads/images/img/staf/3.png" alt=""></a>
+                                        </div>
+                                        <div class="notify_content">
+                                            <a href="#"><h5>what a packages</h5></a>
+                                            <p>Lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+                                    <!-- single_notify  -->
+                                    <div class="single_notify d-flex align-items-center">
+                                        <div class="notify_thumb">
+                                            <a href="#"><img src="~/uploads/images/img/staf/2.png" alt=""></a>
+                                        </div>
+                                        <div class="notify_content">
+                                            <a href="#"><h5>Cool Marketing </h5></a>
+                                            <p>Lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+                                    <!-- single_notify  -->
+                                    <div class="single_notify d-flex align-items-center">
+                                        <div class="notify_thumb">
+                                            <a href="#"><img src="~/uploads/images/img/staf/4.png" alt=""></a>
+                                        </div>
+                                        <div class="notify_content">
+                                            <a href="#"><h5>Awesome packages</h5></a>
+                                            <p>Lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+                                    <!-- single_notify  -->
+                                    <div class="single_notify d-flex align-items-center">
+                                        <div class="notify_thumb">
+                                            <a href="#"><img src="~/uploads/images/img/staf/3.png" alt=""></a>
+                                        </div>
+                                        <div class="notify_content">
+                                            <a href="#"><h5>what a packages</h5></a>
+                                            <p>Lorem ipsum dolor sit amet</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nofity_footer">
+                                    <div class="submit_button text-center pt_20">
+                                        <a href="#" class="btn_1 green">See More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/ Menu_NOtification_Wrap  -->
+                        </li>
+
+                    </div>
+                    <div class="profile_info d-flex align-items-center">
+                        <div class="profile_thumb mr_20">
+                            <img src="~/uploads/images/img/transfer/4.png" alt="#">
+                        </div>
+                        <div class="author_name">
+                            <h4 class="f_s_15 f_w_500 mb-0">Jiue Anderson</h4>
+                            <p class="f_s_12 f_w_400">Manager</p>
+                        </div>
+                        <div class="profile_info_iner">
+                            <div class="profile_author_name">
+                                <p>Manager</p>
+                                <h5>Jiue Anderson</h5>
+                            </div>
+                            <div class="profile_info_details">
+                                <a href="#">My Profile </a>
+                                <a href="#">Settings</a>
+                                <a href="#">Log Out </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ menu  -->
+<div class="main_content_iner ">
+    <div class="container-fluid p-0">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="dashboard_header mb_50">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="dashboard_header_title">
+                                <h3> Default Dashboard</h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="dashboard_breadcam text-right">
+                                <p><a href="index.html">Dashboard</a> <i class="fas fa-caret-right"></i> Mailbox</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="email-sidebar white_box">
+                    <button class="btn_1 w-100 mb-2 btn-lg email-gradient gradient-9-hover email__btn waves-effect"><i class="ti-plus"></i>COMPOSE</button>
+                    <ul class="text-left mt-2">
+                        <li class="active"><a href="#"><i class="ti-user"></i> <span> <span>Primary</span>  <span class="round_badge">3</span> </span> </a></li>
+                        <li><a href="#"><i class="ti-crown"></i> <span> <span>Promotions</span>  <span class="round_badge">1</span> </span> </a></li>
+                        <li><a href="#"><i class="ti-star"></i> <span> <span>Started</span>  <span class="round_badge">2</span> </span> </a></li>
+                        <li><a href="#"><i class="ti-announcement"></i> <span> <span>Send Mails</span>   </span> </a></li>
+                        <li><a href="#"><i class="ti-pin2"></i> <span> <span>Drafts</span>  <span class="round_badge">3</span> </span> </a></li>
+                        <li><a href="#"><i class="ti-pin"></i> <span> <span>Spam</span> </span> </a></li>
+                        <li><a href="#"><i class="ti-trash"></i> <span> <span>Trash</span>  </span> </a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="white_box QA_section mb_30">
+                    <div class="white_box_tittle list_header">
+                        <h4>Andrew Symn</h4>
+                        <div class="box_right d-flex lms_block">
+                            <div class="serach_field_2">
+                                <div class="search_inner">
+                                    <form Active="#">
+                                        <div class="search_field">
+                                            <input type="text" placeholder="Search content here...">
+                                        </div>
+                                        <button type="submit"> <i class="ti-search"></i> </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="QA_table ">
+                        <!-- table-responsive -->
+                        <table class="table lms_table_active">
+                            
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr ondblclick="openMessage(this)" data-id="@item.ID">
+                                        <td scope="row">
+                                            <label class="primary_checkbox d-flex mr-12 ">
+                                                <input type="checkbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </td>
+                                        <td> <i class="far fa-star"></i> </td>
+                                        <td>
+                                            <div class="media align-items-center">
+                                                <img class="circle-rounded mr-3"
+                                                    alt=""
+                                                     letters="@item.Name"
+                                                    width="30"
+                                                    height="30">
+                                                <div class="media-body">
+                                                    <p>@item.Name</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p> Cavab gozleyir...</p>
+                                        </td>
+                                        <td>
+                                            <p class="nowrap">@item.Comment </p>
+                                        </td>
+                                        <td>
+                                            @item.CreatedTime.ToString("dd MMM yyyy HH:mm")
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer part -->
+<div class="footer_part">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer_iner text-center">
+                    <p>2020 © Influence - Designed by <a href="#"> <i class="ti-heart"></i> </a><a href="#"> DashboardPack</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section addjs{ 
+    <script src="~/libs/image-letter/image-letter.js"></script>
+<script>
+    function openMessage(el) {
+        let id = $(el).data('id')
+        window.location.href = `@Url.Action("Details")/${id}`
+    }
+
+</script>
+} 

@@ -1,0 +1,43 @@
+﻿@model BlogPost
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>BlogPost</h4>
+    <hr />
+    <div style="display:flex">
+
+        <div class="col-lg-4">
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Body)
+                </dt>
+                <dd class="col-sm-10">
+                    <p>
+                        @Model.Body.PlainText()
+
+                    </p>
+                </dd>
+
+               
+            </dl>
+        </div>
+        <div class="col-lg-8">
+            <img src="~/uploads/images/blog/@Model.ImagePath" class="image-fluid" />
+
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

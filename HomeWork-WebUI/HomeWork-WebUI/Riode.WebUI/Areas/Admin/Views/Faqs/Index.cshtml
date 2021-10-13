@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Riodetask.Model.Entity.Faq>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Question)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Question)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Answer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a onclick="remove(@item.ID , '@item.Question')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section addcss{
+    <link href="~/libs/toastr.js/toastr.css" rel="stylesheet" />
+}
+@section addjs {
+    <script src="~/libs/sweetalert/sweetalert.min.js"></script>
+    <script src="~/libs/toastr.js/toastr.min.js"></script>
+    <script>
+
+        function remove(id, name) {
+
+            swal({
+                title: "Eminsiniz?",
+                text: `Testik etdiyiniz teqdirde  '${name}' sistemden  silinecek!`,
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                buttons: ["No", "Yes"]
+            }).then(
+                function (isConfirm) {
+                    if (isConfirm) {
+
+
+                        $.ajax({
+                            url: '@Url.Action("Delete")',
+                            type: 'POST',
+                            data: { id },
+                            contentType: 'application/x-www-form-urlencoded', // ne tip  gedecek?   2side model binding rolnu oynayir datani back gondermek ucun isdifade edilir  yeni back gonderilmeye xirmet edilir
+                            dataType: 'json',
+                    beforeSend: function () {
+                        console.log("sorgudan evvel")   // loadir acmaq
+
+                    },
+                    success: function (response) {   // sorgunun neticesi ugurlu olsa
+                        console.log(response)
+
+                        if (response.error == false) {
+
+                            toastr.success(response.Message, "Ugurludur");
+                            window.location.reload();
+
+                        } else {
+                            toastr.error(response.Message, "xeta");
+
+                        }
+                    },
+                            error: function (response) {   // sorgunun neticesi ugursuz olsa
+                                console.log(response)
+                    },
+
+
+                }).always(function () {
+                         console.log("sorgudan sonra")  //loadir baglamaq
+
+                });
+
+                    }
+                });
+        };
+    </script>
+}  

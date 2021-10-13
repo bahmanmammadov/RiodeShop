@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Riodetask.Model.Entity.Category>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<h1>Index</h1>
+<p> <a asp-action="create" > creat</a> </p>
+<table class="table  tree">
+    @foreach (var item in Model)
+    {
+
+            <tr class="treegrid-@item.ID">
+
+                <td>@item.Name</td>
+                <td class="d-flex justify-content-end">
+
+                    <a class="btn btn-outline-warning" asp-action="edit" asp-route-id="@item.ID">Edit</a>
+                    <a class="btn btn-outline-info" asp-action="details" asp-route-id="@item.ID">details</a>
+                    <a class="btn btn-outline-danger" asp-action="delete" asp-route-id="@item.ID">delete</a>
+
+
+                </td>
+            </tr>
+        if (item.Children != null)
+        {
+            @foreach (var child in item.GetChild())
+            {
+                <tr class="treegrid-@child.ID treegrid-parent-@child.ParentID">
+
+                    <td>@child.Name</td>
+                    <td class="d-flex justify-content-end">
+
+                        <a class="btn btn-outline-warning" asp-action="edit" asp-route-id="@child.ID">Edit</a>
+                        <a class="btn btn-outline-info" asp-action="details" asp-route-id="@child.ID">details</a>
+                        <a class="btn btn-outline-danger" asp-action="delete" asp-route-id="@child.ID">delete</a>
+
+
+                    </td>
+                </tr>
+            }
+        }
+    }
+
+</table>
+
+@section addjs{
+    <script src="~/libs/jquery-treegrid/js/jquery.treegrid.js"></script>
+
+    <script type="text/javascript">
+        $('.tree').treegrid();
+    </script>
+}
+@section addcss{
+    <link href="~/libs/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet" />
+}
